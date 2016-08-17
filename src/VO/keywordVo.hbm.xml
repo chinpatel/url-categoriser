@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="VO.keywordVo" table="keywords">
+   <id name="keywordId" type="long" column="keywordId" >
+   <generator class="increment"/>
+  </id>
+  
+   
+  <property name="keywordName" type="string">
+   <column name="keywordName" />
+  </property>
+  
+  
+  <many-to-one name="cat_id" class="VO.categoryVo" cascade="delete" column="cat_id">
+  </many-to-one>
+  </class>
+</hibernate-mapping>
